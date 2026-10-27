@@ -37,7 +37,9 @@ body {
   background: white;
   border-radius: 26px;
   box-shadow: 0 12px 35px #30416e20;
-  transform: translateY(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .hidden{display:none!important}
 .center{text-align:center}
