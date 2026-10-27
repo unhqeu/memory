@@ -27,8 +27,8 @@ body{
   justify-content:center;
   font-family:"Malgun Gothic",sans-serif;
   background:linear-gradient(135deg,#e8edff,#d9f5f0);
-  background-attachment:fixed;
-  background-size:cover;
+  width: 100%;
+  background: linear-gradient(135deg, #e8edff, #d9f5f0);
   color:#26324b;
 }
 .screen{
