@@ -18,18 +18,16 @@ html_code = r"""
 <style>
 *{box-sizing:border-box}
 html,body{width:100%;height:100%;margin:0;overflow:hidden}
-body{
-  margin:0;
-  min-height:100vh;
-  padding:22px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-family:"Malgun Gothic",sans-serif;
-  background:linear-gradient(135deg,#e8edff,#d9f5f0);
-  width: 100%;
-  background: linear-gradient(135deg, #e8edff, #d9f5f0);
-  color:#26324b;
+body {
+  margin: 0;
+  min-height: 100%;
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Malgun Gothic", sans-serif;
+  background: transparent;
+  color: #26324b;
 }
 .screen {
   width: 100%;
