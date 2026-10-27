@@ -19,10 +19,16 @@ html_code = r"""
 *{box-sizing:border-box}
 html,body{width:100%;height:100%;margin:0;overflow:hidden}
 body{
-  padding:10px;
-  display:flex;align-items:center;justify-content:center;
+  margin:0;
+  min-height:100vh;
+  padding:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-family:"Malgun Gothic",sans-serif;
   background:linear-gradient(135deg,#e8edff,#d9f5f0);
+  background-attachment:fixed;
+  background-size:cover;
   color:#26324b;
 }
 .screen{
