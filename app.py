@@ -32,10 +32,13 @@ body{
   color:#26324b;
 }
 .screen{
-  width:100%;max-width:740px;max-height:100%;min-height:0;
-  padding:clamp(16px,2.2vh,24px);
-  background:white;border-radius:22px;
-  box-shadow:0 8px 24px #30416e20;
+  width:100%;
+  max-width:740px;
+  min-height:490px;
+  padding:36px;
+  background:white;
+  border-radius:26px;
+  box-shadow:0 12px 35px #30416e20;
 }
 .hidden{display:none!important}
 .center{text-align:center}
