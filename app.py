@@ -31,14 +31,14 @@ body{
   background: linear-gradient(135deg, #e8edff, #d9f5f0);
   color:#26324b;
 }
-.screen{
-  width:100%;
-  max-width:740px;
-  min-height:490px;
-  padding:36px;
-  background:white;
-  border-radius:26px;
-  box-shadow:0 12px 35px #30416e20;
+.screen {
+  width: 100%;
+  max-width: 800px;
+  min-height: 490px;
+  padding: 36px;
+  background: white;
+  border-radius: 26px;
+  box-shadow: 0 12px 35px #30416e20;
 }
 .hidden{display:none!important}
 .center{text-align:center}
@@ -533,6 +533,19 @@ function goHome(){
 </html>
 
 """
+st.markdown("""
+<style>
+.stApp,
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #e8edff, #d9f5f0);
+}
+
+[data-testid="stMainBlockContainer"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+</style>
+""", unsafe_allow_html=True)
 
 components.html(
     html_code,
