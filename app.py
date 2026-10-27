@@ -4,7 +4,7 @@ import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="기억력 테스트",
-    layout="wide"
+    layout="centered"
 )
 
 html_code = r"""
@@ -19,105 +19,77 @@ html_code = r"""
 *{box-sizing:border-box}
 html,body{width:100%;height:100%;margin:0;overflow:hidden}
 body{
-  padding:clamp(8px,1.5vh,16px);
+  padding:10px;
   display:flex;align-items:center;justify-content:center;
   font-family:"Malgun Gothic",sans-serif;
   background:linear-gradient(135deg,#e8edff,#d9f5f0);
   color:#26324b;
 }
 .screen{
-  width:100%;max-width:800px;max-height:100%;
-  min-height:0;overflow:hidden;
-  padding:clamp(16px,2.5vh,26px);
+  width:100%;max-width:740px;max-height:100%;min-height:0;
+  padding:clamp(16px,2.2vh,24px);
   background:white;border-radius:22px;
   box-shadow:0 8px 24px #30416e20;
 }
 .hidden{display:none!important}
 .center{text-align:center}
-.logo{font-size:clamp(32px,5vh,48px);line-height:1.1}
-h1{font-size:clamp(25px,4vh,32px);color:#3949ab;margin:8px 0}
-h2{font-size:clamp(20px,3vh,24px);margin:8px 0}
-.subtitle{font-size:clamp(14px,2.2vh,17px);line-height:1.55;color:#68738b;margin:8px 0}
-.info{
-  display:flex;justify-content:center;gap:10px;flex-wrap:wrap;
-  margin:clamp(12px,2.2vh,20px) 0;
-}
-.info div{
-  background:#f0f3ff;border-radius:13px;padding:clamp(10px,1.7vh,14px);
-  min-width:0;flex:1 1 0;
-}
-.info strong{display:block;font-size:clamp(17px,2.8vh,21px);color:#3949ab;margin-bottom:4px}
-.info span{font-size:clamp(11px,1.8vh,13px);color:#68738b}
+.logo{font-size:clamp(38px,5vh,52px);line-height:1.1}
+h1{font-size:clamp(27px,3.6vh,33px);color:#3949ab;margin:9px 0}
+h2{font-size:clamp(21px,2.8vh,25px);margin:8px 0}
+.subtitle{font-size:clamp(14px,1.9vh,17px);line-height:1.55;color:#68738b;margin:9px 0}
+.info{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:clamp(14px,2vh,22px) 0}
+.info div{background:#f0f3ff;border-radius:14px;padding:13px;min-width:125px;flex:0 1 150px}
+.info strong{display:block;font-size:clamp(18px,2.5vh,22px);color:#3949ab;margin-bottom:5px}
+.info span{font-size:clamp(12px,1.6vh,14px);color:#68738b}
 button{font-family:inherit;cursor:pointer}
-.primary{
-  border:0;border-radius:12px;background:#4b5bdc;color:white;
-  font-size:clamp(15px,2.5vh,18px);font-weight:bold;
-  padding:clamp(11px,1.8vh,14px) 24px;
-}
+.primary{border:0;border-radius:13px;background:#4b5bdc;color:white;font-size:clamp(16px,2.2vh,18px);font-weight:bold;padding:13px 26px}
 .primary:hover{background:#3444bd}
-.secondary{
-  padding:10px 18px;border:1px solid #d9def0;border-radius:11px;
-  background:white;color:#3949ab;font-size:15px;
-}
-.topbar{
-  display:flex;justify-content:space-between;align-items:center;gap:8px;
-  flex-wrap:wrap;color:#68738b;font-size:clamp(12px,1.8vh,14px);
-}
-.timer{background:#f0f3ff;color:#3949ab;border-radius:10px;padding:7px 10px;font-weight:bold}
-.progress-bg{height:7px;background:#e9ecf5;border-radius:10px;overflow:hidden;margin:12px 0 16px}
+.secondary{padding:11px 18px;border:1px solid #d9def0;border-radius:11px;background:white;color:#3949ab;font-size:15px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;color:#68738b;font-size:14px}
+.timer{background:#f0f3ff;color:#3949ab;border-radius:10px;padding:8px 11px;font-weight:bold}
+.progress-bg{height:7px;background:#e9ecf5;border-radius:10px;overflow:hidden;margin:13px 0 18px}
 .progress{height:100%;width:0;background:#4b5bdc;transition:width .2s}
-.memory-card{
-  min-height:0;height:clamp(130px,25vh,190px);
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  background:#f5f7ff;border:2px solid #e6eaff;border-radius:16px;
-  padding:18px;margin:14px 0;font-size:clamp(17px,2.8vh,22px);
-  line-height:1.65;word-break:keep-all;overflow:auto;
-}
-.question{font-size:clamp(19px,3vh,24px);line-height:1.45;margin:14px 0;word-break:keep-all}
-.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}
-.answer-btn{
-  padding:12px 10px;min-height:48px;border:2px solid #e0e5f3;
-  background:white;border-radius:12px;font-size:clamp(14px,2.3vh,17px);color:#26324b;
-}
+.memory-card{min-height:0;height:clamp(135px,23vh,185px);display:flex;align-items:center;justify-content:center;text-align:center;background:#f5f7ff;border:2px solid #e6eaff;border-radius:17px;padding:20px;margin:17px 0;font-size:clamp(18px,2.5vh,22px);line-height:1.65;word-break:keep-all}
+.question{font-size:clamp(20px,2.8vh,24px);line-height:1.5;margin:18px 0;word-break:keep-all}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin:17px 0}
+.answer-btn{padding:13px 10px;min-height:52px;border:2px solid #e0e5f3;background:white;border-radius:12px;font-size:clamp(15px,2vh,17px);color:#26324b}
 .answer-btn:hover:not(:disabled){border-color:#4b5bdc;background:#f3f5ff}
 .answer-btn:disabled{cursor:default}
 .answer-btn.correct{border-color:#239b69;background:#e5f8ee}
 .answer-btn.wrong{border-color:#e45c69;background:#fff0f0}
-.text-answer{display:flex;gap:8px;margin:16px 0}
-.text-answer input{
-  min-width:0;flex:1;padding:12px;border:2px solid #dfe4f2;
-  border-radius:10px;font-size:16px;
-}
+.text-answer{display:flex;gap:9px;margin:18px 0}
+.text-answer input{min-width:0;flex:1;padding:12px;border:2px solid #dfe4f2;border-radius:10px;font-size:16px}
 .text-answer input:focus{outline:none;border-color:#4b5bdc}
-.feedback{min-height:28px;text-align:center;font-size:18px;font-weight:bold;margin:10px 0}
+.feedback{min-height:30px;text-align:center;font-size:18px;font-weight:bold;margin:12px 0}
 .good{color:#168455}.bad{color:#d94350}
-.result-score{font-size:clamp(42px,7vh,54px);font-weight:bold;color:#3949ab;margin:12px 0}
-.rules{color:#778096;font-size:clamp(11px,1.7vh,13px);line-height:1.55;margin:10px 0}
-#resultScreen .info{margin:12px 0}
-#resultScreen br{display:none}
+.result-score{font-size:clamp(44px,6vh,56px);font-weight:bold;color:#3949ab;margin:16px 0}
+.rules{color:#778096;font-size:clamp(12px,1.6vh,14px);line-height:1.6;margin:12px 0}
+#resultScreen .info{margin:14px 0}
 @media(max-width:600px){
   body{padding:7px}
-  .screen{padding:14px 12px;border-radius:16px}
-  h1{font-size:25px}
+  .screen{padding:15px 12px;border-radius:16px}
+  h1{font-size:26px}
   .subtitle{line-height:1.45}
   .info{gap:7px;margin:12px 0}
-  .info div{padding:9px 5px}
+  .info div{min-width:0;flex:1 1 0;padding:9px 5px}
+  .info span{font-size:11px}
   .answers{gap:7px}
   .answer-btn{padding:10px 5px;min-height:44px}
-  .memory-card{height:clamp(115px,22vh,160px);padding:12px}
-  .question{margin:10px 0}
+  .memory-card{height:clamp(120px,21vh,155px);padding:13px}
+  .question{margin:11px 0}
 }
 @media(max-height:700px){
   body{padding:5px}
-  .screen{padding:12px 18px;border-radius:15px}
+  .screen{padding:12px 16px;border-radius:15px}
   .logo{font-size:30px}
   h1{font-size:24px;margin:5px 0}
+  h2{font-size:19px;margin:5px 0}
   .subtitle{font-size:13px;line-height:1.35;margin:5px 0}
   .info{margin:8px 0;gap:7px}
-  .info div{padding:7px}
+  .info div{padding:7px;min-width:110px}
   .rules{font-size:11px;line-height:1.35;margin:6px 0}
   .progress-bg{margin:8px 0 10px}
-  .memory-card{height:clamp(100px,21vh,145px);margin:8px 0;padding:10px;font-size:17px}
+  .memory-card{height:clamp(100px,19vh,140px);margin:8px 0;padding:10px;font-size:17px}
   .question{font-size:18px;margin:8px 0}
   .answers{gap:7px;margin:8px 0}
   .answer-btn{min-height:40px;padding:8px;font-size:14px}
@@ -555,6 +527,6 @@ function goHome(){
 
 components.html(
     html_code,
-    height=700,
+    height=650,
     scrolling=False
 )
